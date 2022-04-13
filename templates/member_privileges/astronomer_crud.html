@@ -1,0 +1,105 @@
+{% extends 'member_privileges/member_index.html' %}
+{% load static %}
+{% block title %}
+    CRUD Astronomer
+{% endblock %}
+{% block defineStyle %}
+    <style>
+        body {
+            background-image: url("https://github.com/Darshan110801/VNIT-Astronomy-Club-Website/blob/master/static/images/back_drop1%20(2).jpg?raw=true") !important;
+            background-repeat: repeat !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        div.scrollmenu {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+            background-color: #777;
+        }
+
+        .lbl {
+            color: wheat !important;
+            font-weight: bold;
+            font-size: medium;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <div class='container mb-5 mt-5'
+         style="background-image: url('{% static BG_IMG %}');background-attachment:fixed;background-size: cover;">
+        <div class="scrollmenu">
+            <a href="">Add Astronomer</a>
+             <a href="/members/astronomer_crud/remove">Remove Astronomer</a>
+        </div>
+    </div>
+    {% block asked_content %}
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="name" name="name" class="form-control"/>
+                    <label class="form-label lbl" for="name">Name</label>
+                </div>
+
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="image_link" name="image_link" class="form-control"/>
+                    <label class="form-label lbl" for="image_link">Image Link</label>
+                </div>
+
+                <!-- Text input -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="yob" name="yob" class="form-control"/>
+                            <label class="form-label lbl" for="yob">Year of Birth</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="yod" name="yod" class="form-control"/>
+                            <label class="form-label lbl" for="yod">Year of Death</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <textarea id="books" name="books" class="form-control"></textarea>
+                    <label class="form-label lbl" for="books">Books by him/her(strictly comma separated inputs)</label>
+                </div>
+
+                <!-- Number input -->
+                <div class="form-outline mb-4">
+                    <textarea id="summary" name="summary" class="form-control"></textarea>
+                    <label class="form-label lbl" for="summary">Summary Info</label>
+                </div>
+
+                <!-- Message input -->
+                  <div class="form-outline mb-4">
+                    <input type="text" id="wiki_link" name="wiki_link" class="form-control"/>
+                    <label class="form-label lbl" for="wiki_link">Wikipedia/Britannica Link</label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Add info</button>
+            </form>
+        </div>
+    {% endblock %}
+{% endblock %}

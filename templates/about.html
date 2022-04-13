@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About us
+{% endblock title %}
+
+{% block content %}
+        <div style="background-color: honeydew !important">
+            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    {% for carousel in carousels %}
+                        <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}"
+                            class={{ carousel.active }}></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    {% for carousel in carousels %}
+                        {% with carousel.image as IMAGE_PATH %}
+                            <div class="carousel-item {{ carousel.active }}">
+                                <a href="#">
+                                    <picture>
+                                        <source srcset="{{ IMAGE_PATH }}" media="(min-width: 1400px)" style = "width: 100%;height: auto">
+                                        <source srcset="{{ IMAGE_PATH }}" media="(min-width: 769px)" style = "width: 100%;height: auto">
+                                        <source srcset="{{ IMAGE_PATH }}" media="(min-width: 577px)" style = "width: 100%;height: auto">
+                                        <img srcset="{{ IMAGE_PATH }}" alt="responsive image"
+                                             class="d-block img-fluid" style = "width: 100%;height: auto">
+                                    </picture>
+
+                                    <div class="carousel-caption justify-content-center align-items-center">
+                                        <div>
+                                            <h2>{{ carousel.caption_title }}</h2>
+                                            <p>{{ carousel.caption }}</p>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <br><br><br><br><br>
+
+            <div class="container-inner">
+                <section class="hero container" id="hero">
+                    <div class='container'>
+                        <div class="hero_name text-center"><h1>Astronomy Club</h1>
+                            <div class="tagline text-center">Astronomy Club | Since 2010
+                                <p><b>Faculty: Dr. Vishnu Pratap Singh, Dr. S.M Giripunje</b></p></div>
+                            <p class="text_column text-center"><b>We are the official Astronomy Club of VNIT Nagpur where
+                                we try to
+                                explore the
+                                horizons with the aid of our Engineering and Managing skills. From overnight stargazing
+                                to the
+                                screening of nerdy SciFis, we have hailed in every aspect to develop the interest of
+                                engineers
+                                in space and astronomy. From Studying About Astronomy , Cosmology and Astrophysics to
+                                working on
+                                Projects , It's You who will decide the limits of club. Wanna hone you amateur skills in
+                                Astronomy? Look no further you have reached your destination! Welcome to Astro Club
+                                VNIT</b></p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <br><br><br><br><br>
+            <div class="bg-light py-5" style="background-color: white !important;">
+                <div class="container py-5">
+                    <div class="row mb-4">
+                        <div class="col-lg-5">
+                            <h2 class="display-4 font-weight-light">Our Council</h2>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png"
+                                    alt=""
+                                    width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0" style="color: wheat">Ojas Sharma</h5><span
+                                        class="small text-uppercase text-muted">President</span>
+                                <br>
+                                <span class="small text-uppercase text-muted">+91 93095 42773</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End-->
+
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png"
+                                    alt=""
+                                    width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0" style="color: wheat">Eshan Jain</h5><span
+                                        class="small text-uppercase text-muted">Vice President</span>
+                                <br>
+                                <span class="small text-uppercase text-muted">+91 93079 59676</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End-->
+
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png"
+                                    alt=""
+                                    width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0" style="color: wheat">Darshan Nikam</h5>
+                                <span class="small text-uppercase text-muted">Treasurer</span>
+                                <br>
+                                <span class="small text-uppercase text-muted">+91 7219413509</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End-->
+
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png"
+                                    alt=""
+                                    width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0" style="color: wheat">Avinash Deshpande</h5><span
+                                        class="small text-uppercase text-muted">Publicity In-charge</span>
+                                <br>
+                                <span class="small text-uppercase text-muted">+91 89650 61222</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End-->
+
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png"
+                                    alt=""
+                                    width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0" style="color: wheat">Saurabh Kumar</h5><span
+                                        class="small text-uppercase text-muted">Content Developer</span>
+                                <br>
+                                <span class="small text-uppercase text-muted">+91 76674 05536</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#" class="social-link"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

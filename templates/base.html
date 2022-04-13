@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+            content="Astronomy Club of VNIT, Ashlesha invites you to gaze upon the heavens and beyond and see the unfolding of the cosmic miracle."
+            name="description"
+    />
+    <meta
+            content="astronomy club vnit,  astro club VNIT Nagpur, Ashlesha astronomy VNIT Nagpur,astro club vnit, astro club, astronomy,vnit Clubs, space clubs vnit"
+            name="keywords"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    {% block defineStyle %} {% endblock %}
+    <title>{% block title %}Astronomy Club,VNIT {% endblock title %}</title>
+    <link
+            href="https://github.com/Darshan110801/VNIT-Astronomy-Club-Website/blob/master/static/images/Astro1%20-%20Copy.jpg?raw=true"
+            rel="shortcut icon"
+    />
+</head>
+{% load static %}
+<body style="font-family: 'Roboto', sans-serif !important;">
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+></script>
+
+<nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        style="background-color: #282a35 !important"
+>
+    <a class="navbar-brand" href={% block home_url %}"/"{% endblock home_url %}
+    ><strong style="color: gold">Astronomy Club, VNIT</strong></a
+    >
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% block nav_links %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"
+                    ><strong style="color: wheat"><b>Home </b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about"
+                    ><strong style="color: wheat"><b>About Us</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/events"
+                    ><strong style="color: wheat"><b>Events</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/articles"
+                    ><strong style="color: wheat"><b>Articles</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a
+                            class="nav-link"
+                            href="https://eshanojas2916.github.io/Solar_System/index.html"
+                    ><strong style="color: wheat"><b>Solar System</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/apod"
+                    ><strong style="color: wheat"><b>Astro-resources</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://darshan110801.github.io/Astro-quiz/"
+                    ><strong style="color: wheat"><b>Astro-quiz</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/great_astronomers">
+                        <strong style="color: wheat"><b>Great Astronomers</b></strong
+                        ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/members/login_member">
+                        <strong style="color: wheat"><b>Login as council member</b></strong
+                        ><span class="sr-only"></span
+                    ></a>
+                </li>
+            {% endblock nav_links %}
+        </ul>
+    </div>
+</nav>
+
+{% block content %} {% endblock content %}
+</body>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.facebook.com/AstroClubOfVnit/"
+                    role="button"
+                    target="_blank"
+            ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <!-- Instagram -->
+            <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.instagram.com/ashlesha_astronomy_club_vnit/?hl=en"
+                    role="button"
+                    target="_blank"
+            ><i class="fab fa-instagram"></i
+            ></a>
+
+            <h3 class="text-center">Follow us for regular updates.</h3>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div style="width: 70%;margin-left: 15%">
+              <marquee direction="left">
+            © 2021 Copyright:
+        <a
+                class="text-white"
+                href="https://www.linkedin.com/in/darshan-nikam-42b054203"
+                target="_blank"
+        >Darshan Nikam,Eshan Jain</a
+        >
+        </marquee>
+        </div>
+
+
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</html>

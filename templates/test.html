@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    test
+{% endblock %}
+{% block defineStyle %}
+    <style>
+        div.scrollmenu {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+            background-color: #777;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class='container mb-5 mt-5 text-center'>
+        <div class="scrollmenu">
+            <a href="/apod">Astro-pic of the day</a>
+        </div>
+        <div class="card mb-3 container mb-5 mt-5">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+<div class="container my-5">
+    <div class="card-deck">
+        <div class="card" style="">
+            <img class="card-img-top"
+                 src="https://www.betterteam.com/images/astronomer-job-description-2700x2700-2020121.jpeg?crop=4:3,smart&width=1200&dpr=2"
+                 alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title text-center">Jane Doe</h4>
+                <h6 class="text-muted text-center">1920 - 2021</h6>
+                <hr/>
+                <br/>
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <br>
+                <div class="text-center"><a href="#" class="btn btn-primary text-center">Read more.</a></div>
+            </div>
+        </div>
+        <div class="card bg-white">
+            <div class="card-body text-center">
+                <p class="card-text">Some text inside the second card</p>
+            </div>
+        </div>
+        <div class="card bg-white">
+            <div class="card-body text-center">
+                <p class="card-text">Some text inside the third card</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"
+                    ><strong style="color: wheat"><b>Home </b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"
+                    ><strong style="color: wheat"><b>Add astronomer's info</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"
+                    ><strong style="color: wheat"><b>Add article</b></strong
+                    ><span class="sr-only"></span
+                    ></a>
+                </li>
+            </ul>

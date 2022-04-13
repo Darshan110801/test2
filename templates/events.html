@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Upcoming Events
+{% endblock title %}
+
+{% block content %}
+    {% with BG_IMG='https://github.com/Darshan110801/VNIT-Astronomy-Club-Website/blob/master/static/images/bg3.jpg?raw=true'  BG_CARD='images/bgCard.jpg' %}
+        <div style="background-image: url('{{ BG_IMG }}');background-attachment:fixed;background-size : cover;">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    {% for event in events %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}"
+                            class="{{ event.active }} bg-dark"></li>
+                    {% endfor %}
+                </ol>
+
+                <div class="carousel-inner">
+                    {% for event in events %}
+                        <div class="carousel-item {{ event.active }}">
+
+                            <br><br><br>
+                            <div class="card text-center container  border-success" style="background:whitesmoke;">
+                                <div class="card-header">
+                                    <h3 style='color:royalblue'><strong>{{ event.title }}</strong></h3>
+                                </div>
+                                <div class="card-body">
+
+                                    {% autoescape off %}
+                                        <p class="card-text"
+                                           style="color : black !important;">{{ event.description }}</p>{% endautoescape %}
+                                    <a href="{{ event.main_link }}"
+                                       class="btn btn-primary" target="_blank">{{ event.main_link_desc }}</a>
+                                    <br><br>
+                                    <ol class='text-left'>
+                                        {% for link in event.additional_links %}
+                                            <li>
+                                                <a href="{{ link.link }}" target="_blank">{{ link.desc }}</a>
+                                            </li>
+                                            <br>
+                                        {% endfor %}
+                                    </ol>
+                                </div>
+                            </div>
+                            <br><br><br>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    {% endwith %}
+
+{% endblock content %}

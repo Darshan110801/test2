@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+   <div>
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
+        <ol class="carousel-indicators">
+            {% for carousel in carousels %}
+                    <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" class={{ carousel.active }}></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            {% for carousel in carousels %}
+                {% with carousel.images as IMAGE_PATH %}
+                        <div class="carousel-item {{ carousel.active }}">
+                            <a href="#">
+                                <picture>
+                                    <source srcset="{{ IMAGE_PATH.pc }}" media="(min-width: 1400px)" style = "width: 100%;height: auto">
+                                    <source srcset="{{ IMAGE_PATH.pc }}" media="(min-width: 769px)" style = "width: 100%;height: auto">
+                                    <source srcset="{{ IMAGE_PATH.pc }}" media="(min-width: 577px)" style = "width: 100%;height: auto">
+                                    <img src="{{ IMAGE_PATH.mob }}" alt="responsive image"
+                                         class="d-block img-fluid" style = "width: 100%;height: auto">
+                                </picture>
+
+                                <div class="carousel-caption justify-content-center align-items-center">
+                                    <div>
+                                        <h2>{{ carousel.caption_title }}</h2>
+                                        <p>{{ carousel.caption }}</p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- /.carousel -->
+</div>
+{% endblock content %}
+

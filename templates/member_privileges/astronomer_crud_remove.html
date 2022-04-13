@@ -1,0 +1,27 @@
+{% extends 'member_privileges/astronomer_crud.html' %}
+{% block msgs %}
+    {% for message in messages %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock msgs %}
+{% block asked_content %}
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="name" name="name" class="form-control"/>
+                <label class="form-label lbl" for="name">Name</label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Remove</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+
+{% endblock asked_content %}
